@@ -9,7 +9,7 @@ from collections import deque
 
 s, sd = deque(), {}
 
-def oneplus(raw = ""):
+def oneplus(raw = "", input = ""):
     hm, R, bst, B, N = [], {}, deque(), 0, 0
     program_output = ""
     for c in raw:
@@ -43,7 +43,7 @@ def oneplus(raw = ""):
             elif op == '.': s.append(abs(int(raw_input('number: '))))
             elif op == ',': s.append(ord(raw_input('character: ')[0]))
             elif op == ':': program_output += str(s.pop())
-            elif op == ';': sys.stdout.write(unichr(s.pop()))
+            elif op == ';': program_output += unichr(s.pop())
             elif op == '[': cmt = True
             elif op == '(':
                 rtn = raw[N + 1:R[N]].partition('|')
@@ -59,4 +59,4 @@ def oneplus(raw = ""):
         return 3
     return program_output
 if __name__ == "__main__":
-    oneplus('11##":1+1#')
+    print oneplus('11##";1+1#')
