@@ -9,7 +9,20 @@ from collections import deque
 
 s, sd = deque(), {}
 
-def oneplus(raw = "", input = ""):
+def lol(program_input):
+    num = ""
+    for ch in program_input:
+        if ch == '\n':
+            break
+        num += ch
+    return num
+
+def qwq(program_input):
+    if program_input == "":
+        return 0
+    return program_input
+
+def oneplus(raw = "", program_input = ""):
     hm, R, bst, B, N = [], {}, deque(), 0, 0
     program_output = ""
     for c in raw:
@@ -40,8 +53,8 @@ def oneplus(raw = "", input = ""):
             elif op == '^': s.extend([s.pop(), s.pop()])
             elif op == '<': s.append(0 if s.pop() < s.pop() else 1)
             elif op == '#': N = hm[s.pop()]
-            elif op == '.': s.append(abs(int(raw_input('number: '))))
-            elif op == ',': s.append(ord(raw_input('character: ')[0]))
+            elif op == '.': s.append(abs(int(lol())))
+            elif op == ',': s.append(ord(qwq()[0]))
             elif op == ':': program_output += str(s.pop())
             elif op == ';': program_output += unichr(s.pop())
             elif op == '[': cmt = True
