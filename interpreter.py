@@ -53,8 +53,8 @@ def oneplus(raw = "", program_input = ""):
             elif op == '^': s.extend([s.pop(), s.pop()])
             elif op == '<': s.append(0 if s.pop() < s.pop() else 1)
             elif op == '#': N = hm[s.pop()]
-            elif op == '.': s.append(abs(int(lol())))
-            elif op == ',': s.append(ord(qwq()[0]))
+            elif op == '.': s.append(abs(int(lol(program_input))))
+            elif op == ',': s.append(ord(qwq(program_input)[0]))
             elif op == ':': program_output += str(s.pop())
             elif op == ';': program_output += unichr(s.pop())
             elif op == '[': cmt = True
@@ -72,4 +72,4 @@ def oneplus(raw = "", program_input = ""):
         return 3
     return program_output
 if __name__ == "__main__":
-    print oneplus('11##";1+1#')
+    print oneplus(',11"+""*++"*^<:', '1')
